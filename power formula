@@ -1,0 +1,25 @@
+write a programe that receives a whole number x and a big number y that may have a fractional part. the program calculates and displays (x+sqrt(y))^2. All input and output are arranged with appropriate text messeges
+
+
+#include <stdio.h>
+#include <math.h>
+
+int main() {
+    int x;
+    double y, result;
+
+    // Input section
+    printf("Enter a whole number (x): ");
+    scanf("%d", &x);
+
+    printf("Enter a big number (y) which may have a fractional part: ");
+    scanf("%lf", &y);
+
+    // Calculation
+    result = pow(x + sqrt(y), 2);
+
+    // Output section
+    printf("The value of (x + sqrt(y))^2 is: %.4lf\n", result);
+
+    return 0;
+}
