@@ -1,0 +1,45 @@
+#include<stdio.h>
+
+int main(){
+
+    int n,m;
+    printf("Size of array1:");
+    scanf("%d", &n);
+    printf("Size of array2:");
+    scanf("%d", &m);
+
+    int A[n];
+    int B[m];
+
+    for(int i=0; i<n; i++){
+        printf("Element %d: ", i);
+        scanf("%d", &A[i]);
+    }
+    for(int i=0; i<m; i++){
+        printf("Element %d: ", i);
+        scanf("%d", &B[i]);
+    }
+
+    int arr[m+n];
+
+    for(int i=0; i<n; i++){
+        arr[i] = A[i];
+    }
+    for(int i=0; i<m; i++){
+        arr[n+i] = B[i];
+    }
+
+    for(int i=0; i<m+n; i++){
+        if(arr[i] == arr[i+1]){
+            for(int j=i; j<m+n; j++){
+                arr[j] = arr[j+1];
+            }
+        }
+    }
+
+    for(int i=0; i<m+n-1; i++){
+        printf("%d", arr[i]);
+    }
+
+return 0;
+}
