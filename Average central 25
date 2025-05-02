@@ -1,0 +1,34 @@
+write a two funtion program to find the average of the central 25 elements of an array  of 75 floating point numbers, You need to arrange input and output in the 'main', while the calculation in the other function
+
+
+#include <stdio.h>
+
+// Function to calculate the average of the central 25 elements
+float average_central_25(float arr[], int size) {
+    int start = (size - 25) / 2;  // Start index for central 25 elements
+    float sum = 0.0;
+
+    for (int i = start; i < start + 25; i++) {
+        sum += arr[i];
+    }
+
+    return sum / 25.0;
+}
+
+int main() {
+    float numbers[75];
+
+    // Input 75 floating point numbers
+    printf("Enter 75 floating point numbers:\n");
+    for (int i = 0; i < 75; i++) {
+        scanf("%f", &numbers[i]);
+    }
+
+    // Call the function to get average of central 25 elements
+    float avg = average_central_25(numbers, 75);
+
+    // Output the average
+    printf("Average of the central 25 elements: %.2f\n", avg);
+
+    return 0;
+}
